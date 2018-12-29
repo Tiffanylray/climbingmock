@@ -3,21 +3,59 @@
   padding: 0;
 }
 
-nav {
+header {
   display: flex;
-  width: 90vw;
-  height: 70px;
-  margin: 0 auto;
   justify-content: space-between;
-  align-items: center;
+  width: 100vw;
+  min-height: 45px;
+  position: absolute;
+  padding: 20px;
 }
 
-ul {
-  display: flex;
-  text-decoration: none;
+.logo {
+  font-size: 25px;
+  letter-spacing: .5rem;
 }
 
-nav li {
+.nav-bar {
+  text-align: right;
+  padding-right: 40px;
+  width: 50vw;
+}
+
+.nav-link {
   list-style-type: none;
-  padding: 15px;
+  padding: 10px;
+  letter-spacing: .5rem;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-menu {
+  display: none;
+  background-color: white;
+  opacity: .6;
+}
+
+
+@media only screen and (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+
+  .nav-bar {
+    width: 60vw;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-link {
+    letter-spacing: .15rem;
+  }
 }
