@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  width: 90vw;
+  height: 70px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  text-decoration: none;
+}
+
+nav li {
+  list-style-type: none;
+  padding: 15px;
+}
