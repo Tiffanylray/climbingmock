@@ -1,8 +1,19 @@
+/* Universal Styles */
+
 * {
   margin: 0;
   padding: 0;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* Nav Bar */
 header {
   display: flex;
   justify-content: space-between;
@@ -10,6 +21,7 @@ header {
   min-height: 45px;
   position: absolute;
   padding: 20px;
+  color: white;
 }
 
 .logo {
@@ -31,13 +43,11 @@ header {
 
 .nav-link a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 .nav-menu {
   display: none;
-  background-color: white;
-  opacity: .6;
 }
 
 
@@ -59,4 +69,57 @@ header {
   .nav-link {
     letter-spacing: .15rem;
   }
+
+/* Arrow container */
+.arrow-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+img.arrow {
+  position: absolute;
+  top: 40vh;
+  height: 100px;
+}
+
+img.arrow-left {
+left: 0vw;
+}
+
+img.arrow-right {
+  right: 0vw;
+}
+
+/* Image slider */
+#slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slides {
+  width: 400vw;
+  height: 100vh;
+}
+
+.slide {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  float: left;
+}
+
+.slide-1 {
+  background-image: url("img/rock-climbing-1.jpg");
+}
+
+.slide-2 {
+  background-image: url("img/rock-climbing-2.jpg");
+}
+
+.slide-3 {
+  background-image: url("img/rock-climbing-3.jpg");
 }
