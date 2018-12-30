@@ -2,7 +2,7 @@ $(document).ready(() => {
 
 /* Nav bar function */
   $('.burger').on('click', () => {
-    $('.nav-menu').fadeToggle('slow');
+    $('.nav-menu').slideToggle('slow');
   }).on('mouseleave', () => {
     $('.nav-menu').hide();
   });
