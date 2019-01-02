@@ -192,6 +192,10 @@ div .break_line {
   margin: 20px;
 }
 
+.img-box {
+  border-radius: 10px;
+}
+
 /* Section C */
 .section_c {
   width: 100vw;
