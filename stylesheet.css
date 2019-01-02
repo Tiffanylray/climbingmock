@@ -6,12 +6,15 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
+.button {
+  margin: 20px auto;
+  padding: 10px;
+  width: 100px;
+  height: 20px;
+  background-color: #272727;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
 }
 
 /* Nav Bar */
@@ -137,4 +140,68 @@ img.arrow-right {
 
 .slide-3 {
   background-image: url("img/rock-climbing-3.jpg");
+}
+
+/* Section Break Line */
+div .section_break {
+  width: 100vw;
+  align-content: center;
+}
+
+div .break_line {
+  width: 75vw;
+  margin: 0 auto;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 70px;
+}
+
+/* Section A */
+.section_a {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.section_a h1 {
+  padding-top: 30px;
+  text-transform: uppercase;
+}
+
+/* Section B */
+.section_b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section_b>* {
+  flex: 50% 50%;
+}
+
+.box img {
+  width: 35vw;
+  height: auto;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Section C */
+.section_c {
+  width: 100vw;
+  height: 140px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #5E5E5E;
+  color: white;
+}
+
+.section_c h3 {
+  padding-top: 30px;
 }
