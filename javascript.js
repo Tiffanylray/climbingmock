@@ -24,14 +24,12 @@ let $deviceWidth = $(window).width();
     let $slides = $slideContainer.find('.slide');
     let $slideCount = $slideContainer.children().length;
     let $slideWidthPc = 100.0 / $slideCount;
-
     let interval;
 
     function startSlider() {
       interval = setInterval(function() {
         $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed, function () {
-          currentSlide++;
-          console.log(currentSlide);
+          currentSlide++;;
           if(currentSlide === $slides.length) {
             currentSlide = 1;
             $slideContainer.css('margin-left', 0);
@@ -46,25 +44,34 @@ let $deviceWidth = $(window).width();
     let $leftArrow = $arrowContainer.find('.arrow-left');
     let $rightArrow = $arrowContainer.find('.arrow-right');
 
-
     /* Left Arrow */
     $leftArrow.on('click', function() {
       clearInterval(interval);
       if (currentSlide === 1) {
         currentSlide = $slideCount - 1;
-        console.log(currentSlide);
         let lastSlideWidth = -(($slideCount - 2) * $deviceWidth);
         $slideContainer.css({'margin-left' :  lastSlideWidth});
         startSlider();
       } else {
         currentSlide -= 1;
         $slideContainer.css('margin-left', '+='+$deviceWidth);
-        console.log(currentSlide);
         startSlider();
       };
     });
 
     /* Right Arrow */
+    $rightArrow.on('click', function() {
+      clearInterval(interval);
+      if (currentSlide === ($slideCount - 1)) {
+        currentSlide = 1;
+        $slideContainer.css('margin-left', 0);
+        startSlider();
+      } else {
+        currentSlide += 1;
+        $slideContainer.css('margin-left', '-='+$deviceWidth);
+        startSlider();
+      }
+    })
   /* End of Image slide function */
   };
   slideShow();
