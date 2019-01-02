@@ -22,7 +22,8 @@ let $deviceWidth = $(window).width();
     let $slider = $('#slider');
     let $slideContainer = $slider.find('.slides');
     let $slides = $slideContainer.find('.slide');
-    let $allSlides = $slideContainer.find('.slide').toArray();
+    let $slideCount = $slideContainer.children().length;
+    let $slideWidthPc = 100.0 / $slideCount;
 
     let interval;
 
@@ -30,6 +31,7 @@ let $deviceWidth = $(window).width();
       interval = setInterval(function() {
         $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed, function () {
           currentSlide++;
+          console.log(currentSlide);
           if(currentSlide === $slides.length) {
             currentSlide = 1;
             $slideContainer.css('margin-left', 0);
@@ -39,8 +41,30 @@ let $deviceWidth = $(window).width();
     };
     startSlider()
 
+    /* Set-up for Arrows */
+    let $arrowContainer = $('.arrow-container');
+    let $leftArrow = $arrowContainer.find('.arrow-left');
+    let $rightArrow = $arrowContainer.find('.arrow-right');
 
 
+    /* Left Arrow */
+    $leftArrow.on('click', function() {
+      clearInterval(interval);
+      if (currentSlide === 1) {
+        currentSlide = $slideCount - 1;
+        console.log(currentSlide);
+        let lastSlideWidth = -(($slideCount - 2) * $deviceWidth);
+        $slideContainer.css({'margin-left' :  lastSlideWidth});
+        startSlider();
+      } else {
+        currentSlide -= 1;
+        $slideContainer.css('margin-left', '+='+$deviceWidth);
+        console.log(currentSlide);
+        startSlider();
+      };
+    });
+
+    /* Right Arrow */
   /* End of Image slide function */
   };
   slideShow();
