@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hide {
@@ -22,6 +23,11 @@ header {
   position: absolute;
   padding: 20px;
   color: white;
+  z-index: 100;
+}
+
+.burger {
+  cursor: pointer;
 }
 
 .logo {
@@ -32,22 +38,27 @@ header {
 .nav-bar {
   text-align: right;
   padding-right: 40px;
-  width: 50vw;
+  width: auto;
 }
 
 .nav-link {
   list-style-type: none;
   padding: 10px;
   letter-spacing: .5rem;
+  font-size: .85rem;
 }
 
 .nav-link a {
   text-decoration: none;
   color: inherit;
+  opacity: 1;
 }
 
 .nav-menu {
   display: none;
+  background-color: black;
+  opacity: .7;
+  border-radius: 20px;
 }
 
 
@@ -64,11 +75,14 @@ header {
     display: flex;
     justify-content: space-around;
     opacity: 1;
+    z-index: 100;
+    background-color: transparent;
   }
 
   .nav-link {
     letter-spacing: .15rem;
   }
+}
 
 /* Arrow container */
 .arrow-container {
@@ -96,6 +110,7 @@ img.arrow-right {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 0;
 }
 
 .slides {
