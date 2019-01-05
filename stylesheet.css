@@ -28,6 +28,10 @@
   padding: 20px;
 }
 
+.container {
+  display: flex;
+  justify-content: space-around;
+}
 /* Nav Bar */
 header {
   display: flex;
@@ -228,7 +232,8 @@ div .break_line {
 /* Section C */
 .section_c {
   width: 100vw;
-  height: 140px;
+  padding: 30px 0 10px 0;
+  min-height: inherit;
   text-align: center;
   text-transform: uppercase;
   background-color: #5E5E5E;
@@ -236,5 +241,12 @@ div .break_line {
 }
 
 .section_c h3 {
-  padding-top: 30px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+
+/* Footer */
+footer {
+  background-color: #272727;
 }

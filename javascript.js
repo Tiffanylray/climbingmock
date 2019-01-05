@@ -24,7 +24,7 @@ let $deviceWidth = $(window).width();
     let $slideWidthPc = 100.0 / $slideCount;
     let interval;
 
-    function startSlider() {
+    (function startSlider() {
       interval = setInterval(function() {
         $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed, function () {
           currentSlide++;;
@@ -71,7 +71,6 @@ let $deviceWidth = $(window).width();
       }
     })
   /* End of Image slide function */
-  };
-  slideShow();
+})();
 
 }); /* End of document ready function */
