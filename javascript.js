@@ -10,7 +10,7 @@ let $deviceWidth = $(window).width();
 
   /* image slider */
 
-  function slideShow() {
+  (function slideShow() {
     /* configurations */
     let animationSpeed = 1000;
     let pause = 5000;
@@ -24,7 +24,7 @@ let $deviceWidth = $(window).width();
     let $slideWidthPc = 100.0 / $slideCount;
     let interval;
 
-    (function startSlider() {
+    function startSlider() {
       interval = setInterval(function() {
         $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed, function () {
           currentSlide++;;
@@ -35,7 +35,7 @@ let $deviceWidth = $(window).width();
           });
       }, pause);
     };
-    startSlider()
+    startSlider();
 
     /* Set-up for Arrows */
     let $arrowContainer = $('.arrow-container');
