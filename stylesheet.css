@@ -15,7 +15,12 @@
   color: white;
   font-size: 16px;
   border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s;
 }
+  .button:hover {
+    opacity: .75;
+  }
 
 .flex-container {
   display: flex;
@@ -177,7 +182,7 @@ div .break_line {
   height: auto;
   min-height: min-content;
   text-align: center;
-  padding: 10px 0px 10px 0px;
+  padding: 4rem 0 5rem 0;
 }
 
 .section_a h1 {
