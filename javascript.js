@@ -1,5 +1,8 @@
 $(document).ready(() => {
-let $deviceWidth = $(window).width();
+var deviceWidth = $(window).width();
+$(window).resize(() => {
+  deviceWidth = $(window).width();
+});
 
 
 /* Nav bar function */
@@ -10,7 +13,7 @@ let $deviceWidth = $(window).width();
 
   /* image slider */
 
-  (function slideShow() {
+  function slideShow() {
     /* configurations */
     let animationSpeed = 1000;
     let pause = 3000;
@@ -26,7 +29,7 @@ let $deviceWidth = $(window).width();
 
     function startSlider() {
       interval = setInterval(function() {
-        $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed, function () {
+        $slideContainer.animate({'margin-left' : '-='+deviceWidth}, animationSpeed, function () {
           currentSlide++;;
           if(currentSlide === $slides.length) {
             currentSlide = 1;
@@ -47,15 +50,15 @@ let $deviceWidth = $(window).width();
       clearInterval(interval);
       if (currentSlide === 1) {
         currentSlide = $slideCount;
-        let lastSlideWidth = -(($slideCount - 1) * $deviceWidth);
+        let lastSlideWidth = -(($slideCount - 1) * deviceWidth);
         $slideContainer.css({'margin-left' :  lastSlideWidth});
-        let secondToLastSlideWidth = -(($slideCount - 2) * $deviceWidth);
+        let secondToLastSlideWidth = -(($slideCount - 2) * deviceWidth);
         currentSlide = $slideCount - 1;
         $slideContainer.animate({'margin-left' : secondToLastSlideWidth}, animationSpeed);
         startSlider();
       } else {
         currentSlide -= 1;
-        $slideContainer.animate({'margin-left' : '+='+$deviceWidth}, animationSpeed);
+        $slideContainer.animate({'margin-left' : '+='+deviceWidth}, animationSpeed);
         startSlider();
       };
     });
@@ -67,15 +70,16 @@ let $deviceWidth = $(window).width();
         currentSlide = 1;
         $slideContainer.css('margin-left', 0);
         currentSlide ++;
-        $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed);
+        $slideContainer.animate({'margin-left' : '-='+deviceWidth}, animationSpeed);
         startSlider();
       } else {
         currentSlide += 1;
-        $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed);
+        $slideContainer.animate({'margin-left' : '-='+deviceWidth}, animationSpeed);
         startSlider();
       }
     })
   /* End of Image slide function */
-})();
+};
+slideShow();
 
 }); /* End of document ready function */
