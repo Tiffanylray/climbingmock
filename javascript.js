@@ -13,7 +13,7 @@ let $deviceWidth = $(window).width();
   (function slideShow() {
     /* configurations */
     let animationSpeed = 1000;
-    let pause = 5000;
+    let pause = 3000;
     var currentSlide = 1;
 
     /* cache DOM */
