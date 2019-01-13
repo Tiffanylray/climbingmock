@@ -190,6 +190,7 @@ div .break_line {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 5rem;
 }
 
 .section_b>* {
@@ -212,6 +213,14 @@ div .break_line {
 
 .img-box {
   border-radius: 10px;
+}
+
+div.box h3 {
+  padding-top: 1rem;
+}
+
+div.box p {
+  padding-top: .5rem;
 }
 
 @media only screen and (max-width: 550px) {
@@ -249,4 +258,10 @@ div .break_line {
 /* Footer */
 footer {
   background-color: #272727;
+  color: #7D7D7D;
+  padding-bottom: 5rem;
+}
+
+.footer-text > * {
+  padding: .4rem;
 }
