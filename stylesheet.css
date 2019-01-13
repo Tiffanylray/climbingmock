@@ -174,7 +174,7 @@ div .break_line {
 /* Section A */
 .section_a {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   min-height: min-content;
   text-align: center;
   padding: 10px 0px 10px 0px;
