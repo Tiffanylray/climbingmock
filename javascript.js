@@ -14,7 +14,7 @@ let $deviceWidth = $(window).width();
     /* configurations */
     let animationSpeed = 1000;
     let pause = 5000;
-    let currentSlide = 1;
+    var currentSlide = 1;
 
     /* cache DOM */
     let $slider = $('#slider');
@@ -46,13 +46,16 @@ let $deviceWidth = $(window).width();
     $leftArrow.on('click', function() {
       clearInterval(interval);
       if (currentSlide === 1) {
-        currentSlide = $slideCount - 1;
-        let lastSlideWidth = -(($slideCount - 2) * $deviceWidth);
+        currentSlide = $slideCount;
+        let lastSlideWidth = -(($slideCount - 1) * $deviceWidth);
         $slideContainer.css({'margin-left' :  lastSlideWidth});
+        let secondToLastSlideWidth = -(($slideCount - 2) * $deviceWidth);
+        currentSlide = $slideCount - 1;
+        $slideContainer.animate({'margin-left' : secondToLastSlideWidth}, animationSpeed);
         startSlider();
       } else {
         currentSlide -= 1;
-        $slideContainer.css('margin-left', '+='+$deviceWidth);
+        $slideContainer.animate({'margin-left' : '+='+$deviceWidth}, animationSpeed);
         startSlider();
       };
     });
@@ -60,13 +63,15 @@ let $deviceWidth = $(window).width();
     /* Right Arrow */
     $rightArrow.on('click', function() {
       clearInterval(interval);
-      if (currentSlide === ($slideCount - 1)) {
+      if (currentSlide === $slideCount) {
         currentSlide = 1;
         $slideContainer.css('margin-left', 0);
+        currentSlide ++;
+        $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed);
         startSlider();
       } else {
         currentSlide += 1;
-        $slideContainer.css('margin-left', '-='+$deviceWidth);
+        $slideContainer.animate({'margin-left' : '-='+$deviceWidth}, animationSpeed);
         startSlider();
       }
     })
