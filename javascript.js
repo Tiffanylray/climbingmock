@@ -10,6 +10,12 @@ $(window).resize(() => {
     $('.nav-menu').slideToggle('slow');
   });
 
+  $(window).resize(function() {
+    if( $(window).width() > 900) {
+      $('.nav-menu').removeAttr("style");
+    }
+  });
+
 
   /* image slider */
 
